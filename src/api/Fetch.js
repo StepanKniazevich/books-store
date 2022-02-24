@@ -1,21 +1,13 @@
-import React, { Component } from 'react'
-import { useEffect, useState } from 'react'
+
+export const fetchData = () =>
+    fetch('https://mocki.io/v1/a28d4993-d045-42bc-8719-ac70c13d6de7')
+        .then(res => res.json())
 
 
-export default function Fetch() {
 
-    const [bookStore, setBooksStore] = useState([])
 
-    useEffect(() => {
-        fetch('https://api.itbook.store/1.0/search/mongodb')
-            .then(res => res.json())
-            .then(res => setBooksStore(res.books))
-    }, [])
 
-    console.log(bookStore);
-    return (
-        <div> </div>
-    )
-}
+
+
 
 

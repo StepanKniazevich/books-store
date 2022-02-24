@@ -1,13 +1,24 @@
-import './App.css';
-import Fetch from './api/Fetch';
+import './App.scss';
+import { useEffect, useState } from 'react'
+import { fetchData } from './api/Fetch';
+import Header from './Components/Header/Header'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Fetch />
-      </header>
 
+  const [books, setNewBooks] = useState()
+
+  useEffect(() => {
+    fetchData().then(res => setNewBooks(res))
+  }, [])
+
+  console.log(books);
+
+
+
+
+  return (
+    <div className="wrapper">
+      <Header />
     </div>
   );
 }
